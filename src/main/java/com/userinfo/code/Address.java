@@ -1,4 +1,4 @@
-package com.userinfo;
+package com.userinfo.code;
 
 public class Address {
 	private String identifier;
