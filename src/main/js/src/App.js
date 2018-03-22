@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      image: []
+    }
+  }
+
+  componentDidMount(){
+    let url = 'http://localhost:8080/user/details';
+    fetch(url)
+    .then(response => {
+      if(response.status >= 400){
+        throw new Error("Bad Response");
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.setState({image: data.imageUrl});
+    }).catch(e => {
+      console.log(e);
+    });
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          {this.state.image}
+        </div>
       </div>
     );
   }
