@@ -1,0 +1,7 @@
+.displayApp{
+    display: flex;
+    color: blue;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+}
