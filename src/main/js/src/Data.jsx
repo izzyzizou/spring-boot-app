@@ -27,14 +27,34 @@ class Data extends React.Component{
 
         return(
             <div>
-                <h2>Image List</h2>
+                <h2>Spring Boot & React App</h2>
                 <div className="displayApp">
                     {data.map((data) => 
-                        <div key={data.id}>
+                        <div className="box" key={data.id}>
                             <p>{`${data.firstName} ${data.lastName}`}</p>
                             <img alt="text" src={data.imageUrl}/>
                             <p>{data.age}</p>
                             <p>{data.mobileNumber}</p>
+                            <div className="address">
+                                <h2>Primary Address: </h2>
+                                <div className="data">
+                                    <p>{`${data.address.primaryAddress.street},
+                                    ${data.address.primaryAddress.city},
+                                    ${data.address.primaryAddress.state}`}</p>
+                                </div>
+                                <h2>Secondary Address: </h2>
+                                <div className="data">
+                                    <p>{`${data.address.secondaryAddress.street},
+                                    ${data.address.secondaryAddress.city},
+                                    ${data.address.secondaryAddress.state}`}</p>
+                                </div>
+                                <h2>Office Address:</h2>
+                                <div className="data">
+                                    <p>{`${data.address.officeAddress.street},
+                                    ${data.address.officeAddress.city},
+                                    ${data.address.officeAddress.state}`}</p>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>

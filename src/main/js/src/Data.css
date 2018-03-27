@@ -1,7 +1,33 @@
 .displayApp{
     display: flex;
-    color: blue;
     flex-direction: row;
     justify-content: space-around;
     font-weight: bold;
+}
+.box{
+    border: 3px solid black;
+    margin-top: 120px;
+}
+.address{
+    border-top: 5px solid black;
+    margin: 8px;
+    padding: 6px;
+}
+.data{
+    color: black;
+}
+.address h2:nth-child(5){
+    color: lightseagreen;
+}
+.address h2:nth-child(1){
+    color: darkkhaki;
+}
+.address h2:nth-child(3){
+    color: darkred;
+}
+
+@media (max-width: 750px){
+    .displayApp{
+        display: inline-block;
+    }
 }
